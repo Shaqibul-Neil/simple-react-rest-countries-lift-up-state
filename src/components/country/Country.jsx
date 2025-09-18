@@ -60,8 +60,8 @@ const Country = ({
           </div>
         </div>
         <div className="details">
-          {countryInfos.map((countryInfo) => (
-            <CountryDetails countryInfo={countryInfo} key={Math.random() * 5} />
+          {countryInfos.map((countryInfo, i) => (
+            <CountryDetails countryInfo={countryInfo} key={i} />
           ))}
         </div>
       </div>

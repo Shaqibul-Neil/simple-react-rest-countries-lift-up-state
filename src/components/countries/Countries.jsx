@@ -33,7 +33,7 @@ const Countries = ({ countriesPromise }) => {
   const [visitedCountriesFlag, setVisitedCountriesFlag] = useState([]);
 
   const handleVisitedCountriesFlag = (country) => {
-    console.log("visited", country);
+    //console.log("visited", country);
     const flags = country.flags.flags.png;
     let newVisitedCountriesFlag = [...visitedCountriesFlag];
     if (newVisitedCountriesFlag.includes(flags)) {
@@ -44,7 +44,7 @@ const Countries = ({ countriesPromise }) => {
       newVisitedCountriesFlag.push(flags);
     }
     setVisitedCountriesFlag(newVisitedCountriesFlag);
-    console.log(newVisitedCountriesFlag);
+    //console.log(newVisitedCountriesFlag);
   };
 
   return (
@@ -59,12 +59,12 @@ const Countries = ({ countriesPromise }) => {
         <div className="vi_flag_cnt">
           <h3>Visited Countries Flag :</h3>
           <div className="vis-flag extra">
-            {visitedCountriesFlag.map((visitedCountryFlag) => (
+            {visitedCountriesFlag.map((visitedCountryFlag, i) => (
               <img
                 src={visitedCountryFlag}
                 alt=""
                 className="vis-flag-img"
-                key={Math.random() * 10}
+                key={i}
               />
             ))}
           </div>
