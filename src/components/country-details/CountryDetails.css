@@ -1,0 +1,19 @@
+p {
+  margin: 5px 0;
+}
+.details-title {
+  font-weight: 600;
+  text-align: left;
+  width: 80px;
+}
+.dot {
+  width: 8px;
+}
+.detail {
+  flex: 1;
+  text-align: left;
+}
+.detail-item {
+  display: flex;
+  gap: 5px;
+}
