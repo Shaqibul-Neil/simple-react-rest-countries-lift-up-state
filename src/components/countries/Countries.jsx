@@ -30,18 +30,52 @@ const Countries = ({ countriesPromise }) => {
     setVisitedCountries(newVisitedCountries);
   };
 
+  const [visitedCountriesFlag, setVisitedCountriesFlag] = useState([]);
+
+  const handleVisitedCountriesFlag = (country) => {
+    console.log("visited", country);
+    const flags = country.flags.flags.png;
+    let newVisitedCountriesFlag = [...visitedCountriesFlag];
+    if (newVisitedCountriesFlag.includes(flags)) {
+      newVisitedCountriesFlag = newVisitedCountriesFlag.filter(
+        (newVisitedCountryFlag) => newVisitedCountryFlag !== flags
+      );
+    } else {
+      newVisitedCountriesFlag.push(flags);
+    }
+    setVisitedCountriesFlag(newVisitedCountriesFlag);
+    console.log(newVisitedCountriesFlag);
+  };
+
   return (
     <>
       <div>
         <h2>Number of Countries: {countries.length}</h2>
         <h3>Number Of Visited Countries: {visitedCountries.length} </h3>
-        <h3>Visited Countries: {visitedCountries.join(", ")} </h3>
+        <div className="visited-country">
+          <h3>Visited Countries : </h3>
+          <p>{visitedCountries.join(", ")}</p>
+        </div>
+        <div className="vi_flag_cnt">
+          <h3>Visited Countries Flag :</h3>
+          <div className="vis-flag extra">
+            {visitedCountriesFlag.map((visitedCountryFlag) => (
+              <img
+                src={visitedCountryFlag}
+                alt=""
+                className="vis-flag-img"
+                key={Math.random() * 10}
+              />
+            ))}
+          </div>
+        </div>
         <div className="countries">
           {countries.map((country) => (
             <Country
               country={country}
               key={country.ccn3.ccn3}
               handleVisitedCountries={handleVisitedCountries}
+              handleVisitedCountriesFlag={handleVisitedCountriesFlag}
             />
           ))}
         </div>

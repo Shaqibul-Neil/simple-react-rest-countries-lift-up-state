@@ -4,7 +4,6 @@
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  height: 480px;
   justify-content: space-between;
 }
 .country-title {
@@ -22,6 +21,23 @@
 }
 .title {
   font-size: 24px;
+}
+.visited-container {
+  display: grid;
+  grid-template-columns: 1fr 35px;
+  align-items: center;
+}
+.visited-flag {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: bisque;
+}
+.flag-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 .btn-wrapper {
   display: flex;
