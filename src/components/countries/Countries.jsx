@@ -16,12 +16,17 @@ const Countries = ({ countriesPromise }) => {
   const handleVisitedCountries = (country) => {
     const countryName = country.name.common;
     //we need to create a new array and then push item in it because if we push in the same array it will not be updated in the dom
-    const newVisitedCountries = [...visitedCountries];
-    //if country name doesn't exist in the array
-    if (!newVisitedCountries.includes(countryName))
-      newVisitedCountries.push(countryName);
+    let newVisitedCountries = [...visitedCountries];
+
     //if exists then delete that country name
-    else newVisitedCountries.pop(countryName);
+    if (newVisitedCountries.includes(countryName))
+      //filtering on the newVisitedCountries to check if the newVisitedCountry is similar to countryName. filter then filters out the name if its similar and then return a new array with all unique countries. that way countries are not duplicated. and when clicked twice on the button it acts like a toggle
+      newVisitedCountries = newVisitedCountries.filter(
+        (newVisitedCountry) => countryName !== newVisitedCountry
+      );
+    //if country name doesn't exist in the array
+    else newVisitedCountries.push(countryName);
+
     setVisitedCountries(newVisitedCountries);
   };
 
