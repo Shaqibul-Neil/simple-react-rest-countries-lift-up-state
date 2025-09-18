@@ -1,7 +1,7 @@
 import "./CountryDetails.css";
 
 const CountryDetails = ({ countryInfo }) => {
-  console.log(countryInfo);
+  //console.log(countryInfo);
   const { label, value } = countryInfo;
   return (
     <div className="detail-item">

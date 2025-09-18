@@ -2,6 +2,10 @@
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+  justify-content: space-between;
 }
 .country-title {
   display: flex;
@@ -19,5 +23,19 @@
 .title {
   font-size: 24px;
 }
-.details {
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 25px;
+}
+.btn {
+  padding: 10px 50px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  width: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
